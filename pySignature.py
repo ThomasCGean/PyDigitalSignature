@@ -6,7 +6,7 @@ from Crypto.Hash import SHA256
 key = RSA.generate(2048)  # Creates a 2048-bit RSA key pair (256 bytes)
 public_key = key.publickey().export_key()
 private_key = key.export_key()
-public_key_obj = RSA.import_key(public_key)
+public_key_obj = key.publickey()
 
 # Accept user message, hash message, then sign hash of message
 input_message = str(input("Please enter a message to sign: "))
