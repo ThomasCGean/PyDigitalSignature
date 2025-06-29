@@ -12,7 +12,7 @@ public_key_obj = key.publickey()
 input_message = str(input("Please enter a message to sign: "))
 message = input_message.encode()
 hash_obj = SHA256.new(message)  # Create hash object
-signer_object = pkcs1_15.new(key)   #  Instantiate an object with the .sign method used to sign the key
+signer_object = pkcs1_15.new(key)   #  Instantiate an object containing the .sign method; necessary to sign the key
 signature = signer_object.sign(hash_obj)  # Sign the hash (hash_obj) with the private key-derived signer object
 
 # Verifiy signature
